@@ -33,5 +33,25 @@ namespace EjPersistencia.Front
             ListaPersonas.InsertPersona(per);
             txtId.Text = per.Id.ToString();
         }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            Persona perF =  ListaPersonas.Buscar(txtId.Text);
+
+            if (perF.Id != 0 )
+            {
+                txtNombre.Text= perF.Nombre;
+                txtApellido.Text= perF.Apellido;
+                txtEdad.Text=perF.Edad.ToString();
+
+                txtNombre.Focus();
+            }
+            else
+            {
+                txtId.Text = "no existe";
+                txtId.SelectAll();
+                txtId.Focus();
+            }
+        }
     }
 }

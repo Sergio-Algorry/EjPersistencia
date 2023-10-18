@@ -41,6 +41,25 @@ namespace EjPersistencia.Back
             ListaDT.WriteXml("Personas.xml");
         }
 
+        public Persona Buscar(string aId)
+        {
+            int id = Convert.ToInt32(aId);
 
+            Persona per = new Persona();
+
+            for(int i = 0; i < ListaDT.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(ListaDT.Rows[i]["Id"])  == id)
+                {
+                    per.Id = Convert.ToInt32(ListaDT.Rows[i]["Id"]);
+                    per.Nombre = Convert.ToString(ListaDT.Rows[i]["Nombre"]);
+                    per.Apellido = ListaDT.Rows[i]["Apellido"].ToString();
+                    per.Edad = Convert.ToInt32(ListaDT.Rows[i]["Edad"]);
+                    break;
+                }
+            }
+
+            return per;
+        }
     }
 }
