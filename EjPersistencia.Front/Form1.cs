@@ -25,8 +25,7 @@ namespace EjPersistencia.Front
         private void btAceptar_Click(object sender, EventArgs e)
         {
             Persona per = new Persona();
-            per.Agregar(ListaPersonas.ListaDT.Rows.Count+1,
-                        txtNombre.Text,
+            per.Agregar(txtNombre.Text,
                         txtApellido.Text,
                         txtEdad.Text);
 

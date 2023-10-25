@@ -13,12 +13,10 @@ namespace EjPersistencia.Back
         public string Apellido { get; set; }
         public int Edad { get; set; }
 
-        public void Agregar (int aId, 
-                             string aNombre,
+        public void Agregar (string aNombre,
                              string aApellido,
                              string aEdad) 
         {
-            Id = aId;
             Nombre = aNombre;
             Apellido = aApellido;
             Edad = Convert.ToInt32(aEdad);    
